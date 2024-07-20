@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Signup Form</title>
+    <style>
+        *{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+body {
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color: #282539;
+  font-family:arial;
+  background-image: url('img.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+#logoname {
+    margin-right:0;
+    padding: 0;
+    font-size: medium;
+}
+
+a {
+    list-style-type: none;
+    margin: 0;
+    color: white;
+    /* padding: 0.5rem 1rem; */
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    align-items: center;
+
+}
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #89ff00; */
+  background: transparent;
+  backdrop-filter: blur(8px);
+  min-width: 550px;
+  max-height: 620px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 7px 7px 10px 3px #babdb5;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 24px;
+}
+
+/*checkbox to switch from sign up to login*/
+#chk {
+  display: none;
+}
+
+/*Login*/
+.login {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.login label {
+  margin: 25% 0 5%;
+}
+
+label {
+  color: #fff;
+  font-size: 2rem;
+  justify-content: center;
+  display: flex;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .5s ease-in-out;
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  background: #e0dede;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+}
+
+/*Register*/
+.register {
+  background: #eee;
+  border-radius: 60% / 10%;
+  transform: translateY(5%);
+  transition: .8s ease-in-out;
+}
+
+.register label {
+  color: lightgrey;
+  transform: scale(.6);
+}
+
+#chk:checked ~ .register {
+  transform: translateY(-67%);
+}
+
+#chk:checked ~ .register label {
+  transform: scale(1);
+  margin: 10% 0 5%;
+}
+
+#chk:checked ~ .login label {
+  transform: scale(.6);
+  margin: 5% 0 5%;
+}   
+/*Button*/
+.form button {
+  width: 85%;
+  height: 40px;
+  margin: 12px auto 10%;
+  color: #fff;
+  background: lightslategray;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 1px solid grey;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: .2s ease-in;
+}
+
+.form button:hover {
+  background-color: black;
+  width: 95%;
+  height: 45px;
+}
+
+form button{
+  position: relative;
+  overflow: hidden;
+
+}
+
+form button::before{
+  content:"";
+  position: absolute;
+  rotate:35deg;
+  background-color: #fff;
+
+}
+
+form button:hover::before{
+  left: calc(100% + 30px);
+  transition: left 500ms;
+}
+
+
+
+    </style>
+
+
+<script  type="text/javascript">
+    function fun() {
+    let x=document.getElementById("username"); 
+    if(x.value==""){
+    
+      location.href="shop.html";
+      }
+    }
+</script>
+
+
+</head>
+
+<body>
+  
+      
+    <div class="main">  
+      <a href="#"><img src="logo.png" alt="no image" width="70" height="70"
+        style="border-radius: 50%;">
+      <p id="logoname"><i>ONSHOPIFY</i></p>
+      </a>
+      	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="login">
+				<form class="form">
+					<label for="chk" aria-hidden="true">Log in</label>
+					<input  class="input" type="email" name="email" placeholder="Email" required="">
+                    <br>
+					<input class="input" type="password" name="pswd" placeholder="Password" required="">
+					<button class="btn">Log in</button>
+				</form>
+			</div>
+
+            <div class="register">
+				<form class="form">
+					<label for="chk" aria-hidden="true">Register</label>
+					<input  id="username" class="input" type="text" name="txt" placeholder="Username" required="" >
+					<input  class="input" type="email" name="email" placeholder="Email" required="">
+					<input class="input" type="password" name="pswd" placeholder="Password" required="">
+					<button onclick="fun()">Register</button>
+				</form>
+            </div>
+
+
+	</div>
+</body>
+</html>

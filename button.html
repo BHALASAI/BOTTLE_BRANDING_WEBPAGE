@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Redirect to a Webpage</h2>
+<p>The replace() method replaces the current document with a new one:</p>
+
+<h1>Login</h1>
+    <input type="text" id="username" class="form-control" placeholder="Enter your Username...">
+    <br>
+<button onclick="myFunction()">Replace document</button>
+
+<script>
+function myFunction() {
+var x=document.getElementById("username").value; 
+if(x!=""){
+
+  location.replace("https://www.w3schools.com");
+  }
+}
+</script>
+
+</body>
+</html> 
